@@ -50,8 +50,6 @@ else:
 
 ### How it works
 
-### **How It Works**
-
 In a Proof-of-Work (PoW) challenge, the server generates a **16-character hexadecimal string** (`token`) and specifies a **difficulty** level, which determines the number of leading `0`s required in the hash. The user must find an **alphanumeric string** (`[a-z0-9]`) such that the SHA-256 hash of `alphanum + token` satisfies the condition:
 
 ```
@@ -62,7 +60,7 @@ The user solves the challenge by brute-forcing potential `alphanum` strings unti
 
 ---
 
-### How it Works
+#### Step-By-Step Overview
 
 - **Server:**
   - Generates a random 16-character `token`.
@@ -74,7 +72,9 @@ The user solves the challenge by brute-forcing potential `alphanum` strings unti
 - **Server:**
   - Verifies the submitted solution by recomputing the hash.
 
-## TODO
+---
+
+##### TODO
 
 - [ ] Add a CLI Interface to the module
 - [ ] Add a simplified interface to use with pwntools.
@@ -82,3 +82,4 @@ The user solves the challenge by brute-forcing potential `alphanum` strings unti
 - [ ] Add a plugin to use with Flask.
 
 
+---
