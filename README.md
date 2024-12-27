@@ -1,4 +1,6 @@
-# Beta Proof of Work Authentication Proof of Concept
+# Proof of Work Authentication Proof of Concept
+
+> Project Status: *Beta*
 
 This project was inspired by a similar project from another CTF I had played in a while ago, I simply took the concept/idea and implemented it for my needs. I plan to further develop this project and make it more robust and secure. Hopefully one day even integrating directly into the CTFd platform via a plugin.
 
