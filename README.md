@@ -9,12 +9,13 @@ I don't remember which CTF it was specifically, but when I do I'll update this R
 1. Clone the repository
 
 ```bash
-git clone https://github.com/supasuge/ProofOfWorkAuthenticator-Beta.git
+git clone https://github.com/supasuge/PoW-CTFd-Auth-PoC.git
 ```
 
 2. Install the package + Dependencies
 
 ```bash
+cd PoW-CTFd-Auth-PoC
 pip install .
 ```
 
@@ -46,6 +47,32 @@ else:
 ```
 
 ---
+
+### How it works
+
+### **How It Works**
+
+In a Proof-of-Work (PoW) challenge, the server generates a **16-character hexadecimal string** (`token`) and specifies a **difficulty** level, which determines the number of leading `0`s required in the hash. The user must find an **alphanumeric string** (`[a-z0-9]`) such that the SHA-256 hash of `alphanum + token` satisfies the condition:
+
+```
+sha256(alphanum + token).hexdigest() == 0000.... (number of leading 0's based on difficulty)
+```
+
+The user solves the challenge by brute-forcing potential `alphanum` strings until a valid hash is found. Once found, the solution is submitted to the server for verification.
+
+---
+
+### How it Works
+
+- **Server:**
+  - Generates a random 16-character `token`.
+  - Specifies the number of leading `0`s required in the hash (e.g., `difficulty = 4`).
+- **User:**
+  - Brute-forces alphanumeric strings.
+  - Computes `sha256(alphanum + token).hexdigest()` for each string.
+  - Submits a solution when the hash meets the required difficulty.
+- **Server:**
+  - Verifies the submitted solution by recomputing the hash.
 
 ## TODO
 
